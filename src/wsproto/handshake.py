@@ -239,8 +239,7 @@ class H11Handshake:
             )
         if upgrade.lower() != WEBSOCKET_UPGRADE:
             raise RemoteProtocolError(
-                f"Missing header, 'Upgrade: {WEBSOCKET_UPGRADE.decode()}'",
-                event_hint=RejectConnection(),
+                f"Missing header, 'Upgrade: {WEBSOCKET_UPGRADE.decode()}'", event_hint=RejectConnection()
             )
         if host is None:
             raise RemoteProtocolError(
@@ -409,8 +408,7 @@ class H11Handshake:
             )
         if upgrade.lower() != WEBSOCKET_UPGRADE:
             raise RemoteProtocolError(
-                f"Missing header, 'Upgrade: {WEBSOCKET_UPGRADE.decode()}'",
-                event_hint=RejectConnection(),
+                f"Missing header, 'Upgrade: {WEBSOCKET_UPGRADE.decode()}'", event_hint=RejectConnection()
             )
         accept_token = generate_accept_token(self._nonce)
         if accept != accept_token:
